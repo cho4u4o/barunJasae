@@ -1,0 +1,281 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.start {
+  background-color: yellow;
+  font-size: large;
+  height: 70px;
+  width: 150px;
+  border-radius: 30px;
+  margin: 30px;
+}
+
+header {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  background-color: #333;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #4caf50;
+}
+
+#mainContent {
+  padding: 40px;
+}
+
+#gameContent {
+  padding: 40px;
+}
+
+#container {
+  height: 550px;
+  width: auto;
+  background-color: #d9f2d0;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  margin: 0 10px;
+}
+
+.left {
+  float: left;
+  background-image: url(health.png);
+  height: inherit;
+  width: 550px;
+  height: 600px;
+  background-repeat: no-repeat;
+}
+
+.right {
+  float: right;
+  padding: 30px 30px;
+}
+
+.gameList {
+  list-style-type: none;
+}
+
+.gameList > li {
+  padding: 10px;
+  display: block;
+  text-align: center;
+  width: 550px;
+  border-radius: 10px;
+  font-size: 26px;
+  background-color: white;
+  margin-bottom: 40px;
+}
+
+.gameList > li:last-child {
+  margin-bottom: 0;
+}
+
+.tabs {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+.tabs li + li::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 16px;
+  background-color: #c4c4c4;
+  transform: translateY(-50%);
+}
+
+.tabs .on a {
+  position: relative;
+  font-weight: 700;
+  background-color: #4caf50;
+}
+.tabs .on a::before {
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  content: "";
+  background: #4caf50;
+}
+.tabon {
+  display: none;
+}
+.tabon.on {
+  display: block;
+}
+
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+
+  border-radius: 50%;
+  position: relative;
+  animation: moveHorizontal 1s infinite alternate;
+}
+
+@keyframes moveHorizontal {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 50px);
+  }
+}
+
+.box {
+  width: inherit;
+  height: inherit;
+  padding: 30px;
+}
+
+.point {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #4caf50;
+  line-height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+}
+
+.line {
+  position: absolute;
+  border: 1px solid blue;
+}
+
+#containerDot {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  width: 100px;
+  height: 150px;
+  margin: 10px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
+
+.card-flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+
+.card-back {
+  background-color: #aaa;
+}
+
+.num-container {
+  padding: 0 30px;
+}
+
+input {
+  height: 200px;
+  width: 100px;
+  margin-left: 50px;
+}
+
+input:first-child {
+  margin-left: 0;
+}
+
+.sizedBox {
+  height: 70px;
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.player-choice,
+.computer-choice {
+  text-align: center;
+}
+
+.player-choice button,
+.computer-choice div {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  font-size: 18px;
+}
+
+.result {
+  display: inline-block;
+  text-align: center;
+  font-size: 24px;
+}
+
+#computer-image img {
+  width: 100px;
+  height: auto;
+}

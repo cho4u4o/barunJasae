@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>바른자세</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="healthy.html">🙏바른 자세로 앉아주세요</a></h1>
+      <p></p>
+      <p>
+        우리는 건강한 생활습관을 유지하기 위해 바른 자세를 잡는 것이 중요하다고
+        믿습니다. 바른 자세를 유지하며 건강을 지키는 게임을 즐겨보세요.
+      </p>
+    </header>
+    <nav>
+      <ul class="tabs">
+        <li>
+          <a href="#">눈 건강 게임</a>
+        </li>
+        <li><a href="#">점 잇기 게임</a></li>
+        <li>
+          <a href="#">카드 뒤집기 게임</a>
+        </li>
+        <li>
+          <a href="#">숫자 클릭하기 게임</a>
+        </li>
+        <li>
+          <a href="#">가위바위보 게임</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="tabContent">
+      <div class="tabon" id="tab-1">
+        <div id="gameContent">
+          <div id="container">
+            <div class="box">
+              <h1>눈 건강 게임</h1>
+              <p>빠르게 움직이는 공을 주시하며 눈동자를 움직이세요.</p>
+              <div class="circle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tabon" id="tab-2">
+      <div id="gameContent">
+        <div id="container">
+          <div class="box">
+            <h1>점 잇기 게임</h1>
+            <p>작은 숫자부터 순서대로 클릭해 점을 이어주세요.</p>
+            <div id="containerDot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tabon" id="tab-3">
+      <div id="gameContent">
+        <div id="container">
+          <div class="box">
+            <h1>카드 뒤집기 게임</h1>
+            <p>카드를 하나씩 뒤집어 같은 그림의 카드를 찾으세요!</p>
+            <div class="card-container" id="cardContainer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tabon" id="tab-4">
+      <div id="gameContent">
+        <div id="container">
+          <div class="box">
+            <h1>숫자 클릭하기 게임</h1>
+            <p>숫자를 작은 것부터 순서대로 클릭해 주세요.</p>
+            <div class="sizedBox"></div>
+            <div class="num-container">
+              <input type="button" value="1" />
+              <input type="button" value="2" />
+              <input type="button" value="3" />
+              <input type="button" value="4" />
+              <input type="button" value="5" />
+              <input type="button" value="6" />
+              <input type="button" value="7" />
+              <input type="button" value="8" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tabon" id="tab-5">
+      <div id="gameContent">
+        <div id="container">
+          <div class="box">
+            <h1>가위 바위 보 게임</h1>
+            <p>컴퓨터와 가위 바위 보 게임을 진행합니다!</p>
+            <div class="game-container">
+              <div class="player-choice">
+                <h2>당신의 선택</h2>
+                <button id="rock">가위</button>
+                <button id="paper">바위</button>
+                <button id="scissors">보</button>
+              </div>
+              <div class="computer-choice">
+                <h2>컴퓨터의 선택</h2>
+                <div id="computer-image"></div>
+              </div>
+            </div>
+            <div class="result" id="result"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="mainContent">
+      <div id="container">
+        <div class="left"></div>
+        <div class="right">
+          <ul class="gameList">
+            <li>눈 건강을 위한 게임</li>
+            <li>치매 예방을 위한 점 잇기 게임</li>
+            <li>치매 예방을 위한 카드 뒤집기 게임</li>
+            <li>치매 예방을 위한 숫자 클릭하기 게임</li>
+            <li>치매 예방을 위한 가위바위보 게임</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="./JS/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./JS/jquery-3.7.1.slim.js"></script>
+    <script src="game.js" defer></script>
+  </body>
+</html>
