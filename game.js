@@ -13,67 +13,28 @@ $(function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const container = document.getElementById("containerDot");
-
-  const numPoints = 10;
-  for (let i = 0; i < numPoints; i++) {
-    const point = document.createElement("div");
-    point.classList.add("point");
-    point.innerText = i + 1;
-    point.style.left = Math.random() * 90 + "%";
-    point.style.top = Math.random() * 90 + "%";
-    container.appendChild(point);
-
-    point.addEventListener("click", function () {
-      const lines = document.querySelectorAll(".line");
-      lines.forEach((line) => line.remove());
-
-      const clickedPoint = this;
-      const clickedPointRect = clickedPoint.getBoundingClientRect();
-      const clickedPointCenterX =
-        clickedPointRect.left + clickedPointRect.width / 2;
-      const clickedPointCenterY =
-        clickedPointRect.top + clickedPointRect.height / 2;
-
-      const otherPoints = Array.from(
-        container.querySelectorAll(".point")
-      ).filter((point) => point !== clickedPoint);
-      otherPoints.forEach((otherPoint) => {
-        const otherPointRect = otherPoint.getBoundingClientRect();
-        const otherPointCenterX =
-          otherPointRect.left + otherPointRect.width / 2;
-        const otherPointCenterY =
-          otherPointRect.top + otherPointRect.height / 2;
-
-        const line = document.createElement("div");
-        line.classList.add("line");
-        line.style.left =
-          Math.min(clickedPointCenterX, otherPointCenterX) + "px";
-        line.style.top =
-          Math.min(clickedPointCenterY, otherPointCenterY) + "px";
-        line.style.width =
-          Math.abs(clickedPointCenterX - otherPointCenterX) + "px";
-        line.style.height =
-          Math.abs(clickedPointCenterY - otherPointCenterY) + "px";
-        container.appendChild(line);
-      });
-    });
-  }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
   const cardContainer = document.getElementById("cardContainer");
-  const symbols = ["♠", "♣", "♥", "♦"];
+  const imagePaths = [
+    "image1.png",
+    "image2.png",
+    "image3.png",
+    "image4.png",
+    "image5.png",
+    "image6.png",
+  ];
 
-  const cards = symbols.concat(symbols).sort(() => Math.random() - 0.5);
+  const cards = imagePaths.concat(imagePaths).sort(() => Math.random() - 0.5);
 
-  cards.forEach((symbol) => {
+  let flippedCards = [];
+  let matchedPairs = 0;
+
+  cards.forEach((imagePath, index) => {
     const card = document.createElement("div");
     card.classList.add("card");
     card.innerHTML = `
       <div class="card-inner">
-        <div class="card-front">${symbol}</div>
-        <div class="card-back"></div>
+        <div class="card-front"></div>
+        <div class="card-back" style="background-image: url('card_back.png');"></div>
       </div>
     `;
     cardContainer.appendChild(card);
@@ -81,24 +42,43 @@ document.addEventListener("DOMContentLoaded", function () {
     card.addEventListener("click", function () {
       if (!this.classList.contains("card-flipped")) {
         this.classList.add("card-flipped");
+        const front = this.querySelector(".card-front");
+        const back = this.querySelector(".card-back");
+        front.style.backgroundImage = `url('card_image/${imagePath}')`;
+        back.style.display = "none";
 
-        const flippedCards = document.querySelectorAll(".card-flipped");
+        flippedCards.push(this);
+
         if (flippedCards.length === 2) {
           const [firstCard, secondCard] = flippedCards;
           if (
-            firstCard.querySelector(".card-front").textContent ===
-            secondCard.querySelector(".card-front").textContent
+            firstCard.querySelector(".card-front").style.backgroundImage ===
+            secondCard.querySelector(".card-front").style.backgroundImage
           ) {
             setTimeout(() => {
               firstCard.style.visibility = "hidden";
               secondCard.style.visibility = "hidden";
-            }, 500);
+              flippedCards = [];
+              matchedPairs++;
+
+              if (matchedPairs === imagePaths.length) {
+                alert("축하합니다! 모든 카드를 다 맞추셨습니다!");
+                if (confirm("다시 시작하시겠습니까?")) {
+                  location.reload();
+                }
+              }
+            }, 1000);
           } else {
             setTimeout(() => {
-              flippedCards.forEach((card) =>
-                card.classList.remove("card-flipped")
-              );
-            }, 1000);
+              flippedCards.forEach((card) => {
+                card.classList.remove("card-flipped");
+                const front = card.querySelector(".card-front");
+                const back = card.querySelector(".card-back");
+                front.style.backgroundImage = "";
+                back.style.display = "block";
+              });
+              flippedCards = [];
+            }, 2500);
           }
         }
       }
@@ -107,35 +87,100 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const choices = ["rock", "paper", "scissors"];
-  const images = {
-    rock: "rock.png",
-    paper: "paper.png",
-    scissors: "scissors.png",
-  };
+  const playerChoiceButtons = document.querySelectorAll(
+    ".player-choice button"
+  );
+  const computerChoiceDiv = document.getElementById("computer-image");
+  const resultDiv = document.getElementById("result");
 
-  const computerImage = document.getElementById("computer-image");
-  const resultElement = document.getElementById("result");
-
-  document.querySelectorAll(".player-choice button").forEach((button) => {
+  playerChoiceButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const playerChoice = this.id;
-      const computerChoice =
-        choices[Math.floor(Math.random() * choices.length)];
 
-      computerImage.innerHTML = `<img src="images/${images[computerChoice]}" alt="${computerChoice}">`;
+      const computerChoice = getRandomChoice();
 
-      if (playerChoice === computerChoice) {
-        resultElement.textContent = "무승부!";
-      } else if (
-        (playerChoice === "rock" && computerChoice === "scissors") ||
-        (playerChoice === "paper" && computerChoice === "rock") ||
-        (playerChoice === "scissors" && computerChoice === "paper")
-      ) {
-        resultElement.textContent = "당신이 이겼습니다!";
+      // 컴퓨터의 선택 이미지 업데이트
+      computerChoiceDiv.innerHTML = `<img src="images/${computerChoice}.png" alt="${computerChoice}" />`;
+
+      // 가위바위보 결과 계산
+      const result = calculateResult(playerChoice, computerChoice);
+
+      // 결과를 화면에 출력
+      resultDiv.textContent = result;
+    });
+  });
+
+  // 랜덤 선택 함수
+  function getRandomChoice() {
+    const choices = ["rock", "paper", "scissors"];
+    return choices[Math.floor(Math.random() * choices.length)];
+  }
+
+  // 가위바위보 결과 계산 함수
+  function calculateResult(playerChoice, computerChoice) {
+    if (playerChoice === computerChoice) {
+      return "비겼습니다!";
+    } else if (
+      (playerChoice === "rock" && computerChoice === "scissors") ||
+      (playerChoice === "paper" && computerChoice === "rock") ||
+      (playerChoice === "scissors" && computerChoice === "paper")
+    ) {
+      return "이겼습니다!";
+    } else {
+      return "졌습니다!";
+    }
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const numButtons = document.querySelectorAll(".num-container input");
+
+  let clickedNumbers = [];
+  let expectedNumber = 1;
+
+  shuffleNumbers();
+
+  numButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const clickedNumber = parseInt(this.value);
+
+      if (clickedNumber === expectedNumber) {
+        clickedNumbers.push(clickedNumber);
+        expectedNumber++;
+        this.disabled = true;
+
+        if (expectedNumber > numButtons.length) {
+          alert("축하합니다! 성공입니다!");
+          resetGame();
+        }
       } else {
-        resultElement.textContent = "컴퓨터가 이겼습니다!";
+        alert("잘못 눌렀습니다!");
       }
     });
+  });
+
+  function resetGame() {
+    clickedNumbers = [];
+    expectedNumber = 1;
+    numButtons.forEach((button) => {
+      button.disabled = false;
+    });
+    shuffleNumbers();
+  }
+
+  function shuffleNumbers() {
+    for (let i = numButtons.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [numButtons[i].value, numButtons[j].value] = [
+        numButtons[j].value,
+        numButtons[i].value,
+      ];
+    }
+  }
+});
+
+$(function () {
+  $(".tabs li a").click(function () {
+    $("#mainContent").hide();
   });
 });
