@@ -3,31 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Knewave&display=swap"
+      rel="stylesheet"
+    />
     <title>바른자세</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
-      <h1><a href="healthy.html">🙏바른 자세로 앉아주세요</a></h1>
-      <p></p>
-      <p>
-        우리는 건강한 생활습관을 유지하기 위해 바른 자세를 잡는 것이 중요하다고
-        믿습니다. 바른 자세를 유지하며 건강을 지키는 게임을 즐겨보세요.
-      </p>
+      <h1><a href="healthy.html">BarunJasae</a></h1>
     </header>
+    <div class="health-news">
+      <h2>건강 관련 이슈 찾아보기</h2>
+      <ul class="news-links">
+        <li>
+          <a href="https://www.kagp.or.kr:8009/ko/4"
+            >예고없이 찾아오는 무서운 질병, 치매
+          </a>
+        </li>
+        <li>lorem ipsum</li>
+        <li>lorem ipsum</li>
+        <li>lorem ipsum</li>
+        <li>lorem ipsum</li>
+      </ul>
+    </div>
     <nav>
       <ul class="tabs">
         <li>
-          <a href="#">눈 건강 게임</a>
+          <a href="#gameContent">눈 건강 게임</a>
         </li>
         <li>
-          <a href="#">카드 뒤집기 게임</a>
+          <a href="#gameContent">카드 뒤집기 게임</a>
         </li>
         <li>
-          <a href="#">숫자 클릭하기 게임</a>
+          <a href="#gameContent">숫자 클릭하기 게임</a>
         </li>
         <li>
-          <a href="#">가위바위보 게임</a>
+          <a href="#gameContent">가위바위보 게임</a>
         </li>
       </ul>
     </nav>
@@ -102,14 +117,7 @@
     <div id="mainContent" style="display: block">
       <div id="container">
         <div class="left"></div>
-        <div class="right">
-          <ul class="gameList">
-            <li>눈 건강을 위한 게임</li>
-            <li>치매 예방을 위한 카드 뒤집기 게임</li>
-            <li>치매 예방을 위한 숫자 클릭하기 게임</li>
-            <li>치매 예방을 위한 가위바위보 게임</li>
-          </ul>
-        </div>
+        <div class="right"></div>
       </div>
     </div>
     <script type="text/javascript" src="./JS/jquery-3.7.1.min.js"></script>

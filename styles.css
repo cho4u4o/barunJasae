@@ -3,14 +3,15 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
+  background-color: #4d4d4d;
+  scroll-behavior: smooth;
 }
 
 html,
 body {
   height: 90%;
-  margin: 0;
-  padding: 0;
 }
+
 .start {
   background-color: yellow;
   font-size: large;
@@ -21,15 +22,68 @@ body {
 }
 
 header {
-  background-color: #4caf50;
+  background-color: #4d4d4d;
   color: white;
-  text-align: center;
-  padding: 10px 0;
+  text-align: start;
+  padding: 2px 8px;
+}
+
+header > h1 {
+  margin: 0;
+  padding: 0;
+  font-family: "Knewave", system-ui;
 }
 
 header a {
   text-decoration: none;
   color: white;
+}
+
+.health-news {
+  background-color: #5e9960;
+  width: auto;
+  height: 259px;
+  padding: 40px;
+  position: relative;
+}
+
+.health-news > h2 {
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+}
+
+.news-links {
+  list-style: none;
+  margin: 0 auto;
+  padding: 40px 30px;
+  width: 750px;
+  height: 150px;
+}
+
+.news-links > li {
+  width: 146px;
+  height: 146px;
+  margin: 0 0 0 0;
+  padding: 2px;
+  border: none;
+  float: left;
+  font-size: 20px;
+}
+
+.news-links > li:nth-child(2n-1) {
+  color: black;
+  background-color: white;
+}
+
+.news-links > li:nth-child(2n) {
+  color: black;
+  background-color: #b8d4b9;
+}
+
+.news-links a {
+  color: black;
+  text-decoration: none;
 }
 
 nav {
@@ -292,4 +346,10 @@ input:first-child {
 #computer-image img {
   width: 100px;
   height: auto;
+}
+
+.knewave-regular {
+  font-family: "Knewave", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
