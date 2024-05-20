@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Knewave&display=swap"
-      rel="stylesheet"
-    />
-    <title>바른자세</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1><a href="healthy.html">BarunJasae</a></h1>
-    </header>
-    <div class="health-news">
-      <h2>건강 관련 이슈 찾아보기</h2>
-      <ul class="news-links">
-        <li>
-          <a href="https://www.kagp.or.kr:8009/ko/4"
-            >예고없이 찾아오는 무서운 질병, 치매
-          </a>
-        </li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-        <li>lorem ipsum</li>
-      </ul>
-    </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Noto+Sans+KR:wght@100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <title>바른자세</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <h1><a href="healthy.html">BarunJasae</a></h1>
+  </header>
+  <div class="health-news">
+    <h2>건강 관련 이슈 찾아보기</h2>
+    <ul class="news-links">
+      <li>
+        <a href="https://www.kagp.or.kr:8009/ko/4">예고없이 찾아오는 무서운 질병, 치매
+        </a>
+      </li>
+      <li>성인 ADHD 자가진단 하러가기
+      </li>
+      <li>lorem ipsum</li>
+      <li>lorem ipsum</li>
+      <li>lorem ipsum</li>
+      <li>lorem ipsum</li>
+    </ul>
+    <div id="buttonarea"><button id="scrollButton" style="font-weight: 600;">게임하러 가기</button></div>
+  </div>
+  <div class="game-area">
     <nav>
       <ul class="tabs">
         <li>
@@ -115,13 +120,14 @@
       </div>
     </div>
     <div id="mainContent" style="display: block">
-      <div id="container">
-        <div class="left"></div>
-        <div class="right"></div>
-      </div>
+      <div id="container"></div>
     </div>
-    <script type="text/javascript" src="./JS/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="./JS/jquery-3.7.1.slim.js"></script>
-    <script src="game.js" defer></script>
-  </body>
+  </div>
+  </div>
+  <script type="text/javascript" src="./JS/jquery-3.7.1.min.js"></script>
+  <script type="text/javascript" src="./JS/jquery-3.7.1.slim.js"></script>
+  <script src="scripts.js"></script>
+  <script src="game.js" defer></script>
+</body>
+
 </html>

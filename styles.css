@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   margin: 0;
   padding: 0;
   overflow-y: scroll;
@@ -9,66 +9,71 @@ body {
 
 html,
 body {
-  height: 90%;
-}
-
-.start {
-  background-color: yellow;
-  font-size: large;
-  height: 70px;
-  width: 150px;
-  border-radius: 30px;
-  margin: 30px;
+  margin-top: 20px;
+  height: 100%;
 }
 
 header {
-  background-color: #4d4d4d;
-  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 40px;
+  background-color: #ffffff;
   text-align: start;
-  padding: 2px 8px;
+  padding: 10px 100px;
+  z-index: 1000;
 }
 
 header > h1 {
   margin: 0;
   padding: 0;
-  font-family: "Knewave", system-ui;
+  font-family: "Outfit", sans-serif;
 }
 
 header a {
   text-decoration: none;
-  color: white;
+  color: #4d4d4d;
 }
 
 .health-news {
-  background-color: #5e9960;
+  background: linear-gradient(#ffffff 10%, #5e9960);
   width: auto;
-  height: 259px;
-  padding: 40px;
+  height: 100%;
+  padding: 60px;
   position: relative;
 }
 
 .health-news > h2 {
   margin: 0;
   padding: 0;
-  color: #ffffff;
+  color: #4d4d4d;
+  font-size: 32px;
+  text-align: center;
 }
 
 .news-links {
   list-style: none;
-  margin: 0 auto;
-  padding: 40px 30px;
-  width: 750px;
-  height: 150px;
+  margin: 100px auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* 아이템들을 여러 줄로 배치 */
+  justify-content: center; /* 아이템을 중앙 정렬 */
+  max-width: 900px; /* 최대 너비 설정 */
 }
 
 .news-links > li {
-  width: 146px;
-  height: 146px;
-  margin: 0 0 0 0;
+  flex: 0 1 196px; /* 고정 너비 설정 */
+  height: 196px;
+  margin: 0;
   padding: 2px;
   border: none;
-  float: left;
   font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee; /* 배경색 추가 */
 }
 
 .news-links > li:nth-child(2n-1) {
@@ -79,6 +84,7 @@ header a {
 .news-links > li:nth-child(2n) {
   color: black;
   background-color: #b8d4b9;
+  text-align: right;
 }
 
 .news-links a {
@@ -86,8 +92,31 @@ header a {
   text-decoration: none;
 }
 
+.news-links > li:hover {
+  background-color: #4d4d4d;
+}
+
+#buttonarea {
+  display: block;
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
+}
+
+#scrollButton {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity 0.5s; /* 사라졌다 나타나는 효과 */
+}
+
+#scrollButton.hidden {
+  opacity: 0; /* 사라지는 효과 */
+}
+
 nav {
-  background-color: #333;
+  background-color: #d9d9d9;
+  margin: 0 60px;
 }
 
 nav ul {
@@ -99,67 +128,32 @@ nav ul {
 
 nav ul li {
   display: inline;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 nav ul li a {
   display: inline-block;
   padding: 10px 20px;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
 nav ul li a:hover {
-  background-color: #4caf50;
+  background-color: #ffffff;
 }
 
-#mainContent {
-  padding: 40px;
-}
-
-#gameContent {
-  padding: 40px;
+.game-area {
+  height: inherit;
+  width: inherit;
+  background-color: #5e9960;
 }
 
 #container {
   height: 550px;
   width: auto;
-  background-color: #d9f2d0;
-  border-radius: 50px;
-  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
-  margin: 0 5px;
-}
-
-.left {
-  float: left;
-  background-image: url(health.png);
-  height: inherit;
-  width: 550px;
-  height: 600px;
-  background-repeat: no-repeat;
-}
-
-.right {
-  float: right;
-  padding: 30px 30px;
-}
-
-.gameList {
-  list-style-type: none;
-}
-
-.gameList > li {
-  padding: 10px;
-  display: block;
-  text-align: center;
-  width: 550px;
-  border-radius: 10px;
-  font-size: 26px;
-  background-color: white;
-  margin-bottom: 40px;
-}
-
-.gameList > li:last-child {
-  margin-bottom: 0;
+  background-color: #ffffff;
+  margin: 0 60px;
 }
 
 .tabs {
@@ -168,22 +162,13 @@ nav ul li a:hover {
   margin: 0;
   text-align: center;
 }
-.tabs li + li::before {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 1px;
-  height: 16px;
-  background-color: #c4c4c4;
-  transform: translateY(-50%);
-}
 
 .tabs .on a {
   position: relative;
   font-weight: 700;
-  background-color: #4caf50;
+  background-color: #ffffff;
 }
+
 .tabs .on a::before {
   position: absolute;
   left: 0;
@@ -191,9 +176,11 @@ nav ul li a:hover {
   content: "";
   background: #4caf50;
 }
+
 .tabon {
   display: none;
 }
+
 .tabon.on {
   display: block;
 }
@@ -352,4 +339,166 @@ input:first-child {
   font-family: "Knewave", system-ui;
   font-weight: 400;
   font-style: normal;
+}
+
+.ibm-plex-sans-kr-regular {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.noto-sans-kr {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.outfit > {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 기존 CSS 코드 */
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 60px; /* 헤더 높이만큼 상단에 패딩 추가 */
+  }
+
+  header {
+    height: 50px;
+    padding: 5px 20px;
+    text-align: center;
+  }
+
+  header > h1 {
+    font-size: 20px;
+  }
+
+  .health-news {
+    padding: 20px;
+  }
+
+  .health-news > h2 {
+    font-size: 24px;
+  }
+
+  .news-links {
+    margin: 50px auto;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .news-links > li {
+    flex: 0 1 calc(50% - 10px); /* 반응형 레이아웃을 위해 너비 조정 */
+    height: auto; /* 높이 자동 조정 */
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  #buttonarea {
+    width: 100%;
+    padding: 10px;
+  }
+
+  #scrollButton {
+    font-size: 20px; /* 화살표 크기 조정 */
+  }
+
+  nav {
+    margin: 0 20px;
+  }
+
+  nav ul li {
+    font-size: 16px;
+  }
+
+  .game-area {
+    padding: 10px;
+  }
+
+  #container {
+    height: auto;
+    margin: 20px;
+  }
+
+  .tabs {
+    font-size: 16px;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+    animation: moveHorizontalMobile 1s infinite alternate;
+  }
+
+  @keyframes moveHorizontalMobile {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: calc(100% - 40px);
+    }
+  }
+
+  .box {
+    padding: 10px;
+  }
+
+  .point {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .card-container {
+    padding: 10px;
+  }
+
+  .card {
+    width: calc(50% - 10px);
+    height: 100px;
+    margin: 5px;
+  }
+
+  .card-inner {
+    transition: transform 0.6s;
+  }
+
+  .button {
+    font-size: large;
+  }
+
+  .num-container {
+    padding: 0 10px;
+  }
+
+  input {
+    height: 100px;
+    width: 50px;
+    margin-left: 20px;
+  }
+
+  .game-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .player-choice button,
+  .computer-choice div {
+    width: 80px;
+    height: 80px;
+    font-size: 16px;
+  }
+
+  .result {
+    font-size: 20px;
+  }
+
+  #computer-image img {
+    width: 80px;
+  }
 }
