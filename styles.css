@@ -3,7 +3,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-y: scroll;
-  background-color: #4d4d4d;
+  background-color: #ffffff;
   scroll-behavior: smooth;
 }
 
@@ -40,7 +40,7 @@ header a {
   background: linear-gradient(#ffffff 10%, #5e9960);
   width: auto;
   height: 100%;
-  padding: 60px;
+  padding: 30px;
   position: relative;
 }
 
