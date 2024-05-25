@@ -13,6 +13,8 @@ $(function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const flipSound = new Audio("flipcard.mp3");
+  const clapSound = new Audio("clap_sound.mp3");
   const cardContainer = document.getElementById("cardContainer");
   const imagePaths = [
     "image1.png",
@@ -40,6 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
     cardContainer.appendChild(card);
 
     card.addEventListener("click", function () {
+      flipSound.play();
       if (!this.classList.contains("card-flipped")) {
         this.classList.add("card-flipped");
         const front = this.querySelector(".card-front");
@@ -62,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
               matchedPairs++;
 
               if (matchedPairs === imagePaths.length) {
+                clapSound.play();
                 alert("축하합니다! 모든 카드를 다 맞추셨습니다!");
                 if (confirm("다시 시작하시겠습니까?")) {
                   location.reload();
@@ -132,8 +136,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+//버튼 게임
 document.addEventListener("DOMContentLoaded", function () {
   const numButtons = document.querySelectorAll(".num-container input");
+  const clapSound = new Audio("clap_sound.mp3");
+  const clickSound = new Audio("click_effect.mp3");
 
   let clickedNumbers = [];
   let expectedNumber = 1;
@@ -142,6 +149,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   numButtons.forEach((button) => {
     button.addEventListener("click", function () {
+      clickSound.play();
       const clickedNumber = parseInt(this.value);
 
       if (clickedNumber === expectedNumber) {
@@ -150,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
         this.disabled = true;
 
         if (expectedNumber > numButtons.length) {
+          clapSound.play();
           alert("축하합니다! 성공입니다!");
           resetGame();
         }
