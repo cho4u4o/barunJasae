@@ -1,6 +1,18 @@
-document.getElementById("scrollButton").addEventListener("click", function () {
-  window.scrollTo({
-    top: 900, // 원하는 스크롤 위치로 조정
-    behavior: "smooth", // 부드럽게 스크롤되도록 설정
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+
+  menuToggle.addEventListener("click", function () {
+    if (menu.classList.contains("show")) {
+      menu.classList.remove("show");
+      setTimeout(() => {
+        menu.style.display = "none";
+      }, 300); // Match this duration with the CSS transition duration
+    } else {
+      menu.style.display = "flex";
+      setTimeout(() => {
+        menu.classList.add("show");
+      }, 10); // Slight delay to allow for reflow
+    }
   });
 });

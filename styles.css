@@ -44,6 +44,8 @@ body {
 
 /* Header */
 header {
+  display: flex;
+  justify-content: space-between;
   position: fixed;
   left: 0;
   top: 0;
@@ -56,6 +58,7 @@ header {
 }
 
 header > h1 {
+  display: inline-flex;
   margin: 0;
   padding: 0;
   font-family: "Outfit", sans-serif;
@@ -64,6 +67,49 @@ header > h1 {
 header a {
   text-decoration: none;
   color: #4d4d4d;
+}
+
+/* header 메뉴 */
+#header-menu {
+  padding: 0px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 400;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  color: #4d4d4d;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.menu a:hover {
+  color: #5e9960;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+/* 비디오 컨테이너 평소에는 안보임*/
+.video-container {
+  display: none;
 }
 
 /* 건강 정보 표시 부분 */
@@ -86,11 +132,10 @@ header a {
 /* News links styling */
 .news-links {
   list-style: none;
-  margin: 70px auto;
-  width: 270px;
+  margin: 30px auto;
+  width: 380px;
   padding: 0;
   justify-content: center; /* 아이템을 중앙 정렬 */
-  max-width: 900px; /* 최대 너비 설정 */
 }
 
 .news-links > li {
@@ -136,7 +181,6 @@ header a {
   width: fit-content;
   height: auto;
   margin: 0 auto;
-  margin-bottom: 70px;
 }
 
 #scrollButton {
@@ -161,7 +205,7 @@ header a {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Navigation styling */
+/* Navigation */
 nav {
   margin: 0 60px;
   padding: 0;
@@ -195,14 +239,14 @@ nav ul li a:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Game area styling */
+/* Game area */
 .game-area {
   height: inherit;
   width: inherit;
   background-color: #5e9960;
 }
 
-/* Container styling */
+/* Container */
 #container {
   height: auto;
   width: auto;
@@ -213,7 +257,7 @@ nav ul li a:hover {
   margin-right: 20px;
 }
 
-/* Tabs styling */
+/* Tabs */
 .tabs {
   list-style-type: none;
   padding: 0;
@@ -235,7 +279,7 @@ nav ul li a:hover {
   background: #4caf50;
 }
 
-/* Tab content styling */
+/* Tab content */
 .tabon {
   display: none;
 }
@@ -428,6 +472,35 @@ input:first-child {
     font-size: 20px;
   }
 
+  /* 모바일 화면 메뉴버튼 */
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .menu li {
+    margin-left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu.show {
+    display: flex;
+    max-height: 500px; /* Adjust according to your menu height */
+    opacity: 1;
+  }
+
   .health-news {
     padding: 20px;
   }
@@ -535,5 +608,34 @@ input:first-child {
 @media screen and (min-width: 1024px) {
   #container {
     margin: 40px 100px;
+  }
+
+  .health-news {
+    height: 130%;
+  }
+
+  .news-links {
+    float: left;
+    margin: 0;
+  }
+
+  .video-container {
+    display: flex;
+    float: right;
+    justify-content: center;
+  }
+
+  .news-links,
+  .video-container {
+    margin-top: 60px;
+    width: 40%;
+    height: 80%;
+    padding: 0 50px;
+  }
+
+  #vid1 {
+    width: 100%;
+    height: 100px;
+    background: #4caf50;
   }
 }
