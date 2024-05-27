@@ -119,6 +119,7 @@ header a {
   height: auto;
   padding: 30px;
   position: relative;
+  justify-content: center;
 }
 
 .health-news > h2 {
