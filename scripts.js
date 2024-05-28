@@ -1,3 +1,5 @@
+// 모바일 화면 적응형 메뉴바
+
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
@@ -7,12 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
       menu.classList.remove("show");
       setTimeout(() => {
         menu.style.display = "none";
-      }, 300); // Match this duration with the CSS transition duration
+      }, 300);
     } else {
       menu.style.display = "flex";
       setTimeout(() => {
         menu.classList.add("show");
-      }, 10); // Slight delay to allow for reflow
+      }, 10);
     }
   });
 });

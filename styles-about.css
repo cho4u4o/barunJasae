@@ -1,0 +1,133 @@
+/* font */
+.outfit {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* body */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.health-news {
+  background: linear-gradient(#ffffff 10%, #5e9960);
+  width: auto;
+  height: 1000px;
+  padding: 30px;
+  position: relative;
+  justify-content: center;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 40px;
+  background-color: #ffffff;
+  text-align: start;
+  padding: 10px 100px;
+  z-index: 1000;
+}
+
+header > h1 {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+header a {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+/* header 메뉴 */
+#header-menu {
+  padding: 0px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  color: #4d4d4d;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.menu a:hover {
+  color: #5e9960;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 30px; /* 헤더 높이만큼 상단에 패딩 추가 */
+  }
+
+  header {
+    height: 30px;
+    padding: 5px 20px;
+    text-align: center;
+  }
+
+  header > h1 {
+    font-size: 20px;
+  }
+
+  /* 모바일 화면 메뉴버튼 */
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .menu li {
+    margin-left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu.show {
+    display: flex;
+    max-height: 500px; /* Adjust according to your menu height */
+    opacity: 1;
+  }
+}
