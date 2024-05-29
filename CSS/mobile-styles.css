@@ -53,13 +53,10 @@
   .news-links {
     max-width: 80%;
     margin: 50px auto;
-    padding: 0 10px;
   }
 
   .news-links > li {
-    flex: 0 1 calc(50% - 10px); /* 반응형 레이아웃을 위해 너비 조정 */
-    height: auto; /* 높이 자동 조정 */
-    margin: 5px;
+    height: auto;
     font-size: 16px;
   }
 

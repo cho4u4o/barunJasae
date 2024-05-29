@@ -14,8 +14,7 @@
   }
 
   .info-imgContainer {
-    display: flex;
-    float: right;
+    display: inline-block;
     justify-content: center;
   }
 
@@ -30,7 +29,6 @@
     width: 100%;
     position: relative;
     padding-bottom: 56.25%;
-    background: #4caf50;
     border-radius: 10px;
   }
 
@@ -43,6 +41,6 @@
     width: inherit;
     height: 100%;
     border-radius: 10px;
-    background-color: #718372;
+    background-color: #d0dad1;
   }
 }
