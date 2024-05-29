@@ -1,0 +1,167 @@
+@media screen and (max-width: 768px) {
+  header {
+    height: 30px;
+    padding: 5px 20px;
+  }
+
+  header > h1 {
+    font-size: 20px;
+  }
+
+  /* 모바일 화면 메뉴버튼 */
+  .menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 200px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .menu li {
+    margin-left: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu.show {
+    display: flex;
+    max-height: 500px; /* Adjust according to your menu height */
+    opacity: 1;
+  }
+
+  .exercise-box {
+    padding: 20px;
+  }
+
+  .health-news {
+    padding: 20px;
+  }
+
+  h2 {
+    margin-top: 20px;
+    font-size: 24px;
+  }
+
+  .news-links {
+    max-width: 80%;
+    margin: 50px auto;
+    padding: 0 10px;
+  }
+
+  .news-links > li {
+    flex: 0 1 calc(50% - 10px); /* 반응형 레이아웃을 위해 너비 조정 */
+    height: auto; /* 높이 자동 조정 */
+    margin: 5px;
+    font-size: 16px;
+  }
+
+  #buttonarea {
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  #scrollButton {
+    font-size: 15px;
+  }
+
+  nav {
+    margin: 0 20px;
+  }
+
+  nav ul li {
+    font-size: 16px;
+  }
+
+  .game-area {
+    padding: 20px;
+  }
+
+  #container {
+    height: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+
+  .tabs {
+    font-size: 16px;
+  }
+
+  .circle {
+    width: 40px;
+    height: 40px;
+    animation: moveHorizontalMobile 1s infinite alternate;
+  }
+
+  /* 숫자 클릭하기 모바일 화면 */
+  @media screen and (max-width: 768px) {
+    .num-container .button {
+      width: calc(50% - 10px); /* 작은 화면에서는 2열로 배치 */
+      height: 80px;
+      font-size: 24px;
+      line-height: 80px;
+    }
+  }
+
+  /* 가위바위보 */
+  .player-choice button {
+    font-size: 200%;
+  }
+
+  @keyframes moveHorizontalMobile {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: calc(100% - 40px);
+    }
+  }
+
+  .box {
+    padding: 10px;
+  }
+
+  .point {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card {
+    width: calc(33.33% - 10px); /* 3열 유지, 카드 크기 증가를 위해 여백 축소 */
+    padding-top: calc(33.33% - 10px); /* 1:1 비율 유지 */
+    margin: 5px; /* 카드 사이의 간격을 줄임 */
+  }
+  div.card-back {
+    justify-content: center;
+  }
+
+  .card-inner {
+    transition: transform 0.6s;
+  }
+
+  .num-container {
+    padding: 20px;
+  }
+
+  input {
+    height: 100px;
+    width: 100%;
+  }
+}

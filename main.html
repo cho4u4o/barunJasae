@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&family=Noto+Sans+KR:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script type="text/javascript" src="./JS/jquery-3.7.1.min.js"></script>
+    <script type="text/javascript" src="./JS/jquery-3.7.1.slim.js"></script>
+    <link rel="stylesheet" href="CSS/fonts.css" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/game-styles.css" />
+    <link rel="stylesheet" href="CSS/mobile-styles.css" />
+    <link rel="stylesheet" href="CSS/desktop-styles.css" />
+    <title>바른자세</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="main.html">BarunJasae</a></h1>
+      <div id="header-menu">
+        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+        <ul class="menu">
+          <li><a href="about.html">🔍 소개</a></li>
+          <li>
+            <a href="https://health.kdca.go.kr/healthinfo/"
+              >📎 국가 건강 정보 포털 바로가기</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <div class="body">
+      <div class="exercise-box">
+        <h2>신체 부위별 체조</h2>
+        <div id="buttonarea">
+          <button id="scrollButton" style="font-weight: 600">
+            <a href="#tabarea">🎮 게임하러 가기</a>
+          </button>
+        </div>
+        <div class="exercise-vidContainer">
+          <div id="vid-frame" class="autoplay">
+            <div id="vid" style="background-color: aqua"></div>
+            <div id="vid" style="background-color: blue"></div>
+            <div id="vid"></div>
+            <div id="vid"></div>
+            <div id="vid"></div>
+          </div>
+        </div>
+      </div>
+      <div class="health-news">
+        <h2>건강 관련 이슈</h2>
+        <div id="buttonarea">
+          <button id="scrollButton" style="font-weight: 600">
+            <a href="#tabarea">🎮 게임하러 가기</a>
+          </button>
+        </div>
+        <div class="info-imgContainer">
+          <div id="img-frame"><div id="img"></div></div>
+        </div>
+        <ul class="news-links">
+          <li>
+            <a href="https://www.kagp.or.kr:8009/ko/4"
+              >예고없이 찾아오는<br />
+              무서운 질병, 치매
+            </a>
+          </li>
+          <li>
+            치매를 예방하는<br />
+            좋은 습관
+          </li>
+          <li>
+            성인 ADHD<br />
+            자가진단 하러가기
+          </li>
+          <li>
+            눈 건강에<br />
+            좋은 음식 10가지
+          </li>
+          <li>
+            두뇌 건강에<br />
+            좋은 음식 5가지
+          </li>
+          <li>
+            무선 이어폰과<br />
+            외이도염
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="gamearea" class="game-area">
+      <nav>
+        <ul class="tabs" id="tabarea">
+          <li>
+            <a href="#gamearea">눈 건강 게임</a>
+          </li>
+          <li>
+            <a href="#gamearea">카드 뒤집기 게임</a>
+          </li>
+          <li>
+            <a href="#gamearea">숫자 클릭하기 게임</a>
+          </li>
+          <li>
+            <a href="#gamearea">가위바위보 게임</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="tabContent">
+        <div class="tabon" id="tab-1">
+          <div id="gameContent">
+            <div id="container">
+              <div class="box">
+                <h1>눈 건강 게임</h1>
+                <p>빠르게 움직이는 공을 주시하며 눈동자를 움직이세요.</p>
+                <div class="circle"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabon" id="tab-2">
+        <div id="gameContent">
+          <div id="container">
+            <div class="box">
+              <h1>카드 뒤집기 게임</h1>
+              <p>카드를 하나씩 뒤집어 같은 그림의 카드를 찾으세요!</p>
+              <div class="card-container" id="cardContainer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabon" id="tab-3">
+        <div id="gameContent">
+          <div id="container">
+            <div class="box">
+              <h1>숫자 클릭하기 게임</h1>
+              <p>숫자를 작은 것부터 순서대로 클릭해 주세요.</p>
+              <div class="num-container">
+                <input class="button" type="button" value="1" />
+                <input class="button" type="button" value="2" />
+                <input class="button" type="button" value="3" />
+                <input class="button" type="button" value="4" />
+                <input class="button" type="button" value="5" />
+                <input class="button" type="button" value="6" />
+                <input class="button" type="button" value="7" />
+                <input class="button" type="button" value="8" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tabon" id="tab-4">
+        <div id="gameContent">
+          <div id="container">
+            <div class="box">
+              <h1>가위 바위 보 게임</h1>
+              <p>컴퓨터와 가위 바위 보 게임을 진행합니다!</p>
+              <div class="game-container">
+                <div class="player-choice">
+                  <h2>당신의 선택</h2>
+                  <button id="scissors">✌️</button>
+                  <button id="rock">✊</button>
+                  <button id="paper">🖐️</button>
+                </div>
+                <div class="computer-choice">
+                  <h2>컴퓨터의 선택</h2>
+                  <div id="computer-image"></div>
+                </div>
+              </div>
+              <div class="result" id="result"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="mainContent" style="display: block">
+        <div id="container"></div>
+      </div>
+    </div>
+    <script src="JS/scripts.js"></script>
+    <script src="JS/game.js" defer></script>
+  </body>
+</html>

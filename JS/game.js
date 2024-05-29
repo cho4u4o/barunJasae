@@ -13,8 +13,8 @@ $(function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const flipSound = new Audio("flipcard.mp3");
-  const clapSound = new Audio("clap_sound.mp3");
+  const flipSound = new Audio("sounds/flipcard.mp3");
+  const clapSound = new Audio("sounds/clap_sound.mp3");
   const cardContainer = document.getElementById("cardContainer");
   const imagePaths = [
     "image1.png",
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     card.innerHTML = `
       <div class="card-inner">
         <div class="card-front"></div>
-        <div class="card-back" style="background-image: url('card_back.png');"></div>
+        <div class="card-back" style="background-image: url('images/card_back.png');"></div>
       </div>
     `;
     cardContainer.appendChild(card);
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
         this.classList.add("card-flipped");
         const front = this.querySelector(".card-front");
         const back = this.querySelector(".card-back");
-        front.style.backgroundImage = `url('card_image/${imagePath}')`;
+        front.style.backgroundImage = `url('images/${imagePath}')`;
         back.style.display = "none";
 
         flippedCards.push(this);
@@ -139,8 +139,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //버튼 게임
 document.addEventListener("DOMContentLoaded", function () {
   const numButtons = document.querySelectorAll(".num-container input");
-  const clapSound = new Audio("clap_sound.mp3");
-  const clickSound = new Audio("click_effect.mp3");
+  const clapSound = new Audio("sounds/clap_sound.mp3");
+  const clickSound = new Audio("sounds/click_effect.mp3");
 
   let clickedNumbers = [];
   let expectedNumber = 1;

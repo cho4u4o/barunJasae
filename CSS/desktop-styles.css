@@ -1,0 +1,48 @@
+/* 데스크탑 화면 */
+@media screen and (min-width: 1024px) {
+  #container {
+    margin: 30px 5%;
+  }
+
+  .health-news {
+    height: 130%;
+  }
+
+  .news-links {
+    float: left;
+    margin: 0;
+  }
+
+  .info-imgContainer {
+    display: flex;
+    float: right;
+    justify-content: center;
+  }
+
+  .news-links,
+  .info-imgContainer {
+    margin: 60px 0;
+    width: 40%;
+    padding: 0 5%;
+  }
+
+  #img-frame {
+    width: 100%;
+    position: relative;
+    padding-bottom: 56.25%;
+    background: #4caf50;
+    border-radius: 10px;
+  }
+
+  #img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: inherit;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #718372;
+  }
+}

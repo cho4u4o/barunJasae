@@ -1,0 +1,248 @@
+/* Navigation */
+nav {
+  margin: 0 60px;
+  padding: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: black;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s, flex 0.3s, height 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Game area */
+.game-area {
+  height: auto;
+  width: inherit;
+  background-color: #5e9960;
+  padding: 30px;
+}
+
+/* Container */
+#container {
+  height: auto;
+  width: auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+/* Tabs */
+.tabs {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.tabs .on a {
+  position: relative;
+  font-weight: 700;
+  background-color: #ffffff;
+}
+
+.tabs .on a::before {
+  position: relative;
+  content: "";
+  background: #4caf50;
+}
+
+/* Tab content */
+.tabon {
+  display: none;
+}
+
+.tabon.on {
+  display: block;
+}
+
+/* 게임이 들어가는 box */
+.box {
+  width: inherit;
+  height: inherit;
+  padding: 50px;
+}
+
+/* 눈 건강 게임 */
+.circle {
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+  position: relative;
+  animation: moveHorizontal 1s infinite alternate;
+}
+
+@keyframes moveHorizontal {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 50px);
+  }
+}
+
+/* 카드 뒤집기 게임 */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 1500px; /* 컨테이너의 최대 너비 설정 */
+  max-height: max-content;
+  margin: 0 auto;
+  padding: 15px;
+  background-color: #f0f0f0; /* 컨테이너 배경색 설정 */
+}
+
+.card {
+  width: calc(16.66% - 20px); /* 카드 너비를 6열로 맞추기 위해 설정 */
+  padding-top: calc(16.66% - 20px); /* 1:1 비율 유지 */
+  margin: 10px;
+  position: relative;
+  perspective: 1500px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 69.3%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-style: preserve-3d;
+  transition: transform 3s;
+}
+
+.card-flipped .card-inner {
+  transform: rotateY(0deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-back {
+  background-image: url("card_back.png");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 숫자 클릭하기 */
+.num-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.num-container .button {
+  width: calc(25% - 10px);
+  height: 100px;
+  margin: 5px;
+  font-family: "Outfit", sans-serif;
+  font-size: 30px;
+  line-height: 100px;
+  background-color: #a4bea5;
+  border-radius: 10px;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.num-container .button:hover {
+  background-color: #718372;
+}
+
+.num-container > .button:last-child {
+  margin-right: 0px;
+}
+
+/* 가위바위보 */
+input:first-child {
+  margin-left: 0;
+}
+
+.game-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.player-choice,
+.computer-choice {
+  text-align: center;
+  justify-content: center;
+  width: 45%;
+  padding: 0;
+  margin: 0;
+}
+
+.player-choice button,
+.computer-choice div {
+  width: calc(25% - 6px);
+  height: 100px;
+  margin: 0px;
+  font-size: 4em;
+}
+
+.player-choice button {
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 10px;
+  border: none;
+  font-family: "Noto Sans KR", sans-serif;
+  font-weight: 600;
+  margin-right: 15px;
+  height: 50%;
+}
+
+.player-choice button:hover {
+  text-decoration: overline #718372;
+}
+.player-choice button:last-child {
+  margin-right: 0;
+}
+
+.result {
+  display: block;
+  text-align: center;
+  font-size: 24px;
+}
+
+#computer-image {
+  width: 100%;
+  justify-content: center;
+}
+
+#computer-image img {
+  width: 15%;
+  height: auto;
+}

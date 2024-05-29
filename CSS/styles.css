@@ -1,0 +1,252 @@
+/* HTML, Body */
+html,
+body {
+  scroll-behavior: smooth;
+  margin-top: 20px;
+  height: 100%;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 40px;
+  background-color: #ffffff;
+  text-align: start;
+  padding: 10px 100px;
+  z-index: 1000;
+}
+
+header > h1 {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  font-family: "Outfit", sans-serif;
+}
+
+header a {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+/* header 메뉴 */
+#header-menu {
+  padding: 0px;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  color: #4d4d4d;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: inline-block;
+}
+
+.menu a:hover {
+  color: #5e9960;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+/* 체조, 건강 이슈 */
+.body {
+  background: linear-gradient(
+    #ffffff 10%,
+    #95db97 30%,
+    #7ece81 50%,
+    #71b973 70%,
+    #5e9960
+  );
+}
+
+/* 바른 자세와 건강 체조 */
+.exercise-box {
+  width: auto;
+  height: auto;
+  padding: 30px;
+  position: relative;
+  justify-content: center;
+}
+
+.exercise-box > h2 {
+  margin-top: 70px;
+  padding: 0;
+  color: #4d4d4d;
+  font-size: 32px;
+  text-align: center;
+}
+
+.exercise-vidContainer {
+  width: 70%;
+  max-width: 600px;
+  padding: 30px;
+  margin: 60px auto;
+  padding: 0;
+  justify-content: center;
+}
+
+/* 이전,다음 */
+.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+}
+.slick-prev {
+  left: 0;
+}
+.slick-next {
+  right: 0;
+}
+
+#vid-frame {
+  position: relative;
+  padding-bottom: 56.25%;
+  background: #4caf50;
+  border-radius: 10px;
+}
+
+#vid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: inherit;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #718372;
+  z-index: 10;
+}
+
+/* 비디오 컨테이너 평소에는 안보임*/
+.info-imgContainer {
+  display: none;
+}
+
+/* 건강 정보 표시 부분 */
+.health-news {
+  width: auto;
+  height: auto;
+  padding: 30px;
+  position: relative;
+  justify-content: center;
+  overflow: auto;
+}
+
+.health-news > h2 {
+  margin-top: 10px;
+  padding: 0;
+  color: #4d4d4d;
+  font-size: 32px;
+  text-align: center;
+}
+
+/* News links styling */
+.news-links {
+  list-style: none;
+  margin: 30px auto;
+  width: 380px;
+  padding: 0;
+  justify-content: center;
+}
+
+.news-links > li {
+  padding: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 10px;
+  background: radial-gradient(#a4bea5, #ffffff);
+  transition: transform 0.3s, box-shadow 0.3s, flex 0.3s, height 0.3s;
+}
+
+.news-links > li:nth-child(2) {
+  margin-bottom: 20px;
+}
+
+.news-links > li:nth-child(4) {
+  margin-bottom: 20px;
+}
+
+.news-links > li:nth-child(2n-1) {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.news-links > li:nth-child(2n) {
+  color: black;
+  text-align: right;
+}
+
+.news-links a {
+  color: black;
+  text-decoration: none;
+}
+
+.news-links > li:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Button */
+#buttonarea {
+  display: block;
+  width: fit-content;
+  height: auto;
+  margin: 0 auto;
+}
+
+#scrollButton {
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 18px;
+  font-weight: 300px;
+  padding: 5px 10px;
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  transition: transform 0.3s, box-shadow 0.3s, flex 0.3s, height 0.3s;
+}
+
+#scrollButton a {
+  color: black;
+  text-decoration: none;
+}
+
+#scrollButton:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
