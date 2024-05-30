@@ -5,30 +5,44 @@
   }
 
   .health-news {
-    height: 130%;
-  }
-
-  .news-links {
-    float: left;
-    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: calc(724px + 5%);
+    gap: 5%;
+    height: 800px;
   }
 
   .info-imgContainer {
-    display: inline-block;
+    grid-column: 2;
+    grid-row: 1;
+    display: block;
     justify-content: center;
+  }
+
+  :root {
+    --container-width: 100%; /* 요소의 너비 */
+    --height-calculation: calc(
+      100vh - (var(--container-width) * 0.5625 * 2) - 40px
+    );
+  }
+
+  .news-links {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    width: 100%;
   }
 
   .news-links,
   .info-imgContainer {
-    margin: 60px 0;
-    width: 40%;
-    padding: 0 5%;
+    padding: 5%;
   }
 
   #img-frame {
     width: 100%;
     position: relative;
     padding-bottom: 56.25%;
+    background: #4caf50;
     border-radius: 10px;
   }
 
@@ -41,6 +55,6 @@
     width: inherit;
     height: 100%;
     border-radius: 10px;
-    background-color: #d0dad1;
+    background-color: #718372;
   }
 }

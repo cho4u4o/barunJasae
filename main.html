@@ -23,7 +23,6 @@
     <script type="text/javascript" src="./JS/jquery-3.7.1.slim.js"></script>
     <link rel="stylesheet" href="CSS/fonts.css" />
     <link rel="stylesheet" href="CSS/styles.css" />
-    <link rel="stylesheet" href="CSS/slider-styles.css" />
     <link rel="stylesheet" href="CSS/game-styles.css" />
     <link rel="stylesheet" href="CSS/mobile-styles.css" />
     <link rel="stylesheet" href="CSS/desktop-styles.css" />
@@ -44,77 +43,96 @@
         </ul>
       </div>
     </header>
-    <div class="health-news">
-      <h2>건강 관련 이슈</h2>
-      <div id="buttonarea">
-        <button id="scrollButton" style="font-weight: 600">
-          <a href="#tabarea">🎮 게임하러 가기</a>
-        </button>
-      </div>
-      <div class="info-imgContainer">
-        <div id="img-frame">
-          <div id="img">
-            <iframe
-              width="100%"
-              height="100%"
-              style="border-radius: 10px"
-              src="https://www.youtube.com/embed/W-OHK3zmsJY?si=bB-Ad1C90oQNMpJa"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
+    <div class="section1">
+      <div class="exercise-box">
+        <h2>부위별 스트레칭</h2>
+        <div id="buttonarea">
+          <button id="scrollButton" style="font-weight: 600">
+            <a href="#tabarea">🎮 게임하러 가기</a>
+          </button>
         </div>
-        <br /><br />
-        <div id="img-frame">
-          <div id="img">
-            <iframe
-              width="100%"
-              height="100%"
-              style="border-radius: 10px"
-              src="https://www.youtube.com/embed/JD9TjTi5zIc?si=yMK8MUulKYMjBYFT"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
+        <div class="exercise-scrollerContainer">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">목, 어깨 스트레칭</div>
+              <div class="swiper-slide">골반 스트레칭</div>
+              <div class="swiper-slide">허리 스트레칭</div>
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
-
-      <ul class="news-links">
-        <li>
-          <a href="https://www.kagp.or.kr:8009/ko/4"
-            >예고없이 찾아오는<br />
-            무서운 질병, 치매
-          </a>
-        </li>
-        <li>
-          치매를 예방하는<br />
-          좋은 습관
-        </li>
-        <li>
-          성인 ADHD<br />
-          자가진단 하러가기
-        </li>
-        <li>
-          눈 건강에<br />
-          좋은 음식 10가지
-        </li>
-        <li>
-          두뇌 건강에<br />
-          좋은 음식 5가지
-        </li>
-        <li>
-          무선 이어폰과<br />
-          외이도염
-        </li>
-      </ul>
+      <div class="exercise-box">
+        <h2>건강 관련 이슈</h2>
+        <div id="buttonarea">
+          <button id="scrollButton" style="font-weight: 600">
+            <a href="#tabarea">🎮 게임하러 가기</a>
+          </button>
+        </div>
+      </div>
+      <div class="health-news">
+        <div class="info-imgContainer">
+          <div id="img-frame">
+            <div id="img">
+              <iframe
+                width="100%"
+                height="100%"
+                style="border-radius: 10px"
+                src="https://www.youtube.com/embed/W-OHK3zmsJY?si=bB-Ad1C90oQNMpJa"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          <div id="img-frame" style="margin: 20px 0">
+            <div id="img">
+              <iframe
+                width="100%"
+                height="100%"
+                style="border-radius: 10px"
+                src="https://www.youtube.com/embed/JD9TjTi5zIc?si=yMK8MUulKYMjBYFT"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+        <ul class="news-links">
+          <li>
+            <a href="https://www.kagp.or.kr:8009/ko/4"
+              >예고없이 찾아오는<br />
+              무서운 질병, 치매
+            </a>
+          </li>
+          <li>
+            치매를 예방하는<br />
+            좋은 습관
+          </li>
+          <li>
+            성인 ADHD<br />
+            자가진단 하러가기
+          </li>
+          <li>
+            눈 건강에<br />
+            좋은 음식 10가지
+          </li>
+          <li>
+            두뇌 건강에<br />
+            좋은 음식 5가지
+          </li>
+          <li>
+            무선 이어폰과<br />
+            외이도염
+          </li>
+        </ul>
+      </div>
     </div>
-
     <div id="gamearea" class="game-area">
       <nav>
         <ul class="tabs" id="tabarea">
