@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>바른자세</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-clock/0.1.0/jquery.clock.min.js"></script>
+    <link rel="icon" href="images/health.png" type="image/png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
@@ -25,7 +28,50 @@
         </ul>
       </div>
     </header>
-    <div class="health-news"></div>
+    <div class="health-news">
+      <section id="developers">
+        <h2 class="developer-intro">개발자 소개</h2>
+        <div class="developer">
+          <img src="images/키노피오.jpeg" alt="개발자 1" />
+          <h3>한유진</h3>
+          <p>프론트엔드 개발자</p>
+        </div>
+        <div class="developer">
+          <img src="images/부끄부끄.jpeg" alt="개발자 2" />
+          <h3>최윤정</h3>
+          <p>프론트엔드 개발자</p>
+        </div>
+      </section>
+      <section id="introduction">
+        <h2>BarunJasae는..</h2>
+        <p>사람들의 건강을 증진시키기 위해 다양한 기능을 제공합니다.</p>
+        <ul>
+          <li>
+            <strong>부위별 체조 </strong> 다양한 신체 부위에 맞춘 체조 동작을
+            제공합니다.
+          </li>
+          <li>
+            <strong>건강 이슈 </strong> 최신 건강 정보를 제공하여 사용자들이
+            건강을 지킬 수 있도록 돕습니다.
+          </li>
+          <li>
+            <strong>기능성 게임 </strong> 재미있게 건강을 증진시킬 수 있는
+            다양한 게임을 제공합니다.
+          </li>
+        </ul>
+      </section>
+    </div>
     <script src="JS/scripts.js"></script>
+    <footer id="footer">
+      <div class="footer-content">
+        © 2024. BarunJase Co. all rights reserved.
+      </div>
+    </footer>
+    <script>
+      $(document).ready(function () {
+        // #clock 요소를 시계로 변환
+        $("#clock").clock();
+      });
+    </script>
   </body>
 </html>

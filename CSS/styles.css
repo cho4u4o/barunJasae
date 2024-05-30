@@ -294,3 +294,16 @@ header a {
   transform: scale(1.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
+
+#footer {
+  height: 40px;
+  text-align: center;
+  background-color: #4d4d4d;
+  color: #ffffff;
+}
+.footer-content {
+  display: inline-block;
+  font-size: small;
+  padding-top: 10px;
+  font-family: "Outfit", sans-serif;
+}

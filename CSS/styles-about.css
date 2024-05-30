@@ -8,17 +8,32 @@
 
 /* body */
 body {
+  font-family: "Outfit", sans-serif;
   margin: 0;
   padding: 0;
+  overflow-y: scroll;
 }
 
 .health-news {
   background: linear-gradient(#ffffff 10%, #5e9960);
   width: auto;
-  height: 1000px;
   padding: 30px;
   position: relative;
   justify-content: center;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  margin-top: 20px;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 /* Header */
@@ -87,9 +102,78 @@ header a {
   cursor: pointer;
 }
 
+h1 {
+  margin: 0;
+}
+
+section {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#developers {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.developer-intro {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.developer {
+  text-align: center;
+  width: 30%;
+  border-radius: 10%;
+  background-color: #a4bea5;
+}
+
+.developer img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
+
+#introduction ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#introduction ul li {
+  background: #a4bea5;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+#footer {
+  height: 40px;
+  text-align: center;
+  background-color: #4d4d4d;
+  color: #ffffff;
+}
+
+.footer-content {
+  display: inline-block;
+  font-size: small;
+  padding-top: 10px;
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+}
+
 @media screen and (max-width: 768px) {
   body {
     padding-top: 30px; /* 헤더 높이만큼 상단에 패딩 추가 */
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    font-family: "Outfit", sans-serif;
   }
 
   header {
@@ -129,5 +213,32 @@ header a {
     display: flex;
     max-height: 500px; /* Adjust according to your menu height */
     opacity: 1;
+  }
+
+  .developer-intro {
+    text-align: center;
+    display: inline-block;
+    align-items: center;
+  }
+
+  #developers {
+    display: block;
+    text-align: center;
+  }
+
+  .developer {
+    display: inline-block;
+    margin-bottom: 50px;
+    text-align: center;
+    width: 80%;
+    border-radius: 15%;
+    background-color: #a4bea5;
+  }
+
+  .developer img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
   }
 }
