@@ -10,6 +10,7 @@
     grid-template-rows: calc(724px + 5%);
     gap: 5%;
     height: 800px;
+    margin-top: 50px;
   }
 
   .info-imgContainer {
@@ -19,18 +20,15 @@
     justify-content: center;
   }
 
-  :root {
-    --container-width: 100%; /* 요소의 너비 */
-    --height-calculation: calc(
-      100vh - (var(--container-width) * 0.5625 * 2) - 40px
-    );
-  }
-
   .news-links {
     grid-column: 1;
     grid-row: 1;
     margin: 0;
     width: 100%;
+  }
+
+  .news-links li {
+    width: 82%;
   }
 
   .news-links,

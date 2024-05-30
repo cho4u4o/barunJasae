@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/health.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -54,16 +55,25 @@
         <div class="exercise-scrollerContainer">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">목, 어깨 스트레칭</div>
-              <div class="swiper-slide">골반 스트레칭</div>
-              <div class="swiper-slide">허리 스트레칭</div>
+              <div class="swiper-slide">
+                <img src="images/neck_shoulder.jpeg" alt="" />
+                <a href="https://youtu.be/mUnSpfItRf0?si=shFVRPxo-0F8XTNd">
+                  목, 어깨 스트레칭</a
+                >
+              </div>
+              <div class="swiper-slide" id="1-slide">
+                <img src="images/waist.jpeg" alt="" />
+                <a href="https://youtu.be/q2jEHE7Ir3A?si=iRvzBsleh2Y-BmrJ">
+                  허리, 골반 스트레칭</a
+                >
+              </div>
             </div>
             <div class="swiper-pagination"></div>
           </div>
         </div>
       </div>
       <div class="exercise-box">
-        <h2>건강 관련 이슈</h2>
+        <h2 id="second-h2">건강 관련 이슈</h2>
         <div id="buttonarea">
           <button id="scrollButton" style="font-weight: 600">
             <a href="#tabarea">🎮 게임하러 가기</a>
@@ -228,16 +238,12 @@
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
-          delay: 2500,
+          delay: 5000,
           disableOnInteraction: false,
         },
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
         },
       });
     </script>
