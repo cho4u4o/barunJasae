@@ -19,9 +19,7 @@
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
     <script type="text/javascript" src="./JS/jquery-3.7.1.min.js"></script>
-    <script type="text/javascript" src="./JS/jquery-3.7.1.slim.js"></script>
     <link rel="stylesheet" href="CSS/fonts.css" />
     <link rel="stylesheet" href="CSS/styles.css" />
     <link rel="stylesheet" href="CSS/game-styles.css" />
@@ -44,7 +42,7 @@
         </ul>
       </div>
     </header>
-    <div class="section1">
+    <section class="section1" data-parallax="scroll">
       <div class="exercise-box">
         <h2>부위별 스트레칭</h2>
         <div id="buttonarea">
@@ -162,7 +160,7 @@
           </li>
         </ul>
       </div>
-    </div>
+    </section>
     <div id="gamearea" class="game-area">
       <nav>
         <ul class="tabs" id="tabarea">
@@ -263,7 +261,7 @@
         spaceBetween: 30,
         centeredSlides: true,
         autoplay: {
-          delay: 5000,
+          delay: 3000,
           disableOnInteraction: false,
         },
         pagination: {
