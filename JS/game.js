@@ -103,8 +103,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const computerChoice = getRandomChoice();
 
+      const choiceValues = {
+        scissors: "✌️",
+        rock: "✊",
+        paper: "🖐️",
+      };
+
+      const choiceImg = choiceValues[computerChoice];
+
       // 컴퓨터의 선택 이미지 업데이트
-      computerChoiceDiv.innerHTML = `<img src="images/${computerChoice}.png" alt="${computerChoice}" />`;
+      computerChoiceDiv.innerHTML = `<h3>${choiceImg}</h3>`;
 
       // 가위바위보 결과 계산
       const result = calculateResult(playerChoice, computerChoice);

@@ -240,7 +240,6 @@ input:first-child {
   justify-content: center;
 }
 
-#computer-image img {
-  width: 15%;
-  height: auto;
+#computer-image h3 {
+  margin: 0;
 }
