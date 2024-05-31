@@ -22,20 +22,6 @@ body {
   justify-content: center;
 }
 
-html,
-body {
-  scroll-behavior: smooth;
-  margin-top: 20px;
-}
-
-body {
-  font-family: "Noto Sans KR", sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-}
-
 /* Header */
 header {
   display: flex;
@@ -115,7 +101,7 @@ section {
 }
 
 #developers {
-  margin-top: 60px;
+  margin-top: 70px;
   display: flex;
   justify-content: space-around;
 }
@@ -164,7 +150,6 @@ section {
   display: inline-block;
   font-size: small;
   padding-top: 10px;
-  margin: 0;
   font-family: "Outfit", sans-serif;
 }
 
@@ -173,7 +158,6 @@ section {
     padding-top: 30px; /* 헤더 높이만큼 상단에 패딩 추가 */
     scroll-behavior: smooth;
     overflow-y: scroll;
-    font-family: "Outfit", sans-serif;
   }
 
   header {
